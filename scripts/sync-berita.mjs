@@ -126,7 +126,7 @@ async function main() {
       slug,
       judul,
       tanggal,
-      tanggalIso: iso,
+      tanggal: iso,
       ringkas: paragraf[0]?.slice(0, 160) ?? "",
       isi: paragraf,
       gambar,
@@ -159,7 +159,7 @@ export type Berita = {
   slug: string;
   judul: string;
   tanggal: string;
-  tanggalIso: string;
+  tanggal: string;
   ringkas: string;
   isi: string[];
   gambar: string;
@@ -172,7 +172,7 @@ export type Berita = {
 export const berita: Berita[] = ${JSON.stringify(berita, null, 2)};
 
 export const beritaTerbaru: Berita[] = [...berita].sort((a, b) =>
-  b.tanggalIso.localeCompare(a.tanggalIso),
+  b.tanggal.localeCompare(a.tanggal),
 );
 `;
 
