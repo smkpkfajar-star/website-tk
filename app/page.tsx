@@ -6,7 +6,7 @@ import { KontenSementara } from "@/components/konten-sementara";
 import { PlaceholderFoto } from "@/components/placeholder-foto";
 import { kelompok } from "@/data/kelas";
 import { elemenCapaian, metode } from "@/data/metode";
-import { beritaTerbaru } from "@/data/berita.generated";
+import { berita } from "@/data/berita.generated";
 import { alamatPendek, linkWa, ppdbMulai, ppdbSelesai, site, tahunPpdb } from "@/data/site";
 
 export default function Beranda() {
@@ -280,7 +280,7 @@ function JadwalSingkat() {
 /* ------------------------------------------------------------------ */
 
 function BeritaRingkas() {
-  const terbaru = beritaTerbaru.slice(0, 3);
+  const terbaru = berita.slice(0, 3);
   if (terbaru.length === 0) return null;
 
   return (
@@ -311,7 +311,7 @@ function BeritaRingkas() {
                 </div>
                 <div className="p-5">
                   <p className="text-xs font-bold tracking-wide text-hijau-700 uppercase">
-                    {b.jenis} - {b.tanggal}
+                    {b.kategori} - {b.tanggal}
                   </p>
                   <h3 className="mt-2 font-display text-lg leading-snug font-bold text-hijau-900">
                     <Link href={`/berita/${b.slug}`} className="hover:underline">

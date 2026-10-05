@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { KartuBerita } from "@/components/kartu-berita";
 import { KepalaHalaman } from "@/components/kepala-halaman";
 import { KontenSementara } from "@/components/konten-sementara";
-import { berita } from "@/data/berita.generated";
+import { getBerita } from "@/data/berita.generated";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -11,7 +11,9 @@ export const metadata: Metadata = {
   alternates: { canonical: `${site.url}/berita` },
 };
 
-export default function HalamanBerita() {
+export default async function HalamanBerita() {
+  const berita = await getBerita().catch(() => []);
+
   return (
     <>
       <KepalaHalaman
