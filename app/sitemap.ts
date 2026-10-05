@@ -30,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const beritaBaru: MetadataRoute.Sitemap = berita.map((b) => ({
     url: `${site.url}/berita/${b.slug}`,
-    lastModified: new Date(b.tanggalIso),
+    lastModified: new Date(b.tanggal),
     changeFrequency: "yearly",
     priority: 0.5,
   }));
